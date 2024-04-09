@@ -2,10 +2,11 @@ version: '3.7'
 
 services:
     app:
+        restart: always
         build: ./
-        command: streamlit run app/main.py --server.port 8501
+        command: streamlit run app/main.py --server.port 8591 --theme.base light
         volumes:
             - ./:/usr/src/app
         ports:
-            - 8501:8501
-        image: yourstreamlitapp:latest
+            - 8591:8591
+        image: hhid_estimator:latest
